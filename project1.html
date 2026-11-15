@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Forever Bestie 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    color: #fff4fb;
+    text-align: center;
+    background:
+        radial-gradient(circle at top left, #42265f, transparent 45%),
+        radial-gradient(circle at bottom right, #55274f, transparent 40%),
+        #100b21;
+    overflow-x: hidden;
+}
+
+.screen {
+    display: none;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 85px 20px 45px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.screen.active {
+    display: flex;
+    animation: appear 0.8s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    width: 100%;
+    max-width: 680px;
+    margin: auto;
+    padding: 35px 24px;
+    border: 1px solid #ffffff24;
+    border-radius: 28px;
+    background: #ffffff09;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 70px #00000030;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+h1 {
+    font-size: clamp(42px, 9vw, 72px);
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: clamp(32px, 7vw, 48px);
+    margin: 15px 0;
+}
+
+.gradient {
+    background: linear-gradient(120deg, #ff9ec5, #c8a9ff, #ffc0df);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #ffc3df;
+    line-height: 1.8;
+}
+
+.subtitle {
+    color: #dfcfe9;
+    font-size: 15px;
+    line-height: 1.9;
+    margin: 20px 0;
+}
+
+button {
+    font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn {
+    border: none;
+    border-radius: 50px;
+    padding: 15px 25px;
+    margin-top: 25px;
+    color: #29142e;
+    background: linear-gradient(120deg, #ff9ec5, #c8a9ff);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 30px #ff9ec533;
+    transition: transform 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+.music {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    padding: 10px 14px;
+    color: white;
+    background: #ffffff12;
+    border: 1px solid #ffffff35;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.moon {
+    font-size: 55px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    to { filter: drop-shadow(0 0 18px #ff9ec5); }
+}
+
+.divider {
+    margin: 25px 0;
+    color: #ffb2d2;
+    font-size: 25px;
+}
+
+.small {
+    color: #cbb6dc;
+    font-size: 12px;
+    margin-top: 22px;
+}
+
+.gift {
+    display: block;
+    margin: 25px auto;
+    border: none;
+    background: none;
+    font-size: clamp(100px, 25vw, 155px);
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    50% { transform: translateY(-14px) rotate(4deg); }
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin: 30px 0 15px;
+}
+
+.photo-card {
+    min-width: 0;
+    padding: 8px 8px 15px;
+    border: none;
+    background: #fff7fc;
+    color: #674264;
+    cursor: pointer;
+    box-shadow: 0 12px 30px #00000035;
+    transition: transform 0.25s ease;
+}
+
+.photo-card:nth-child(1) { transform: rotate(-3deg); }
+.photo-card:nth-child(2) { transform: rotate(2deg) translateY(10px); }
+.photo-card:nth-child(3) { transform: rotate(-2deg); }
+
+.photo-card:hover {
+    transform: translateY(-8px) rotate(0);
+}
+
+.photo-area {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #e9c9ff, #ffc6df, #bdbdff);
+    color: #54365f;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.photo-area img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.photo-caption {
+    padding-top: 12px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 12px;
+}
+
+#memory-message {
+    color: #ead9f3;
+    line-height: 1.8;
+    font-size: 14px;
+    margin: 25px 0;
+}
+
+.letter {
+    display: none;
+    max-width: 620px;
+    margin: 30px auto 0;
+    padding: 30px 23px;
+    text-align: left;
+    color: #64425e;
+    background: #fff6f8;
+    line-height: 1.95;
+    box-shadow: 0 15px 50px #00000030;
+    animation: appear 0.8s ease;
+}
+
+.letter.open {
+    display: block;
+}
+
+.letter h3 {
+    font-size: 24px;
+    margin-bottom: 22px;
+}
+
+.letter p {
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.signature {
+    color: #b14e87;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px !important;
+    font-style: italic;
+}
+
+.final-cake {
+    font-size: 80px;
+    animation: bounce 1.5s infinite;
+}
+
+.final-message {
+    line-height: 2;
+    color: #f3dfef;
+    margin: 25px 0;
+    font-size: 17px;
+}
+
+#hearts {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.heart {
+    position: absolute;
+    bottom: -35px;
+    animation: floatUp 7s linear forwards;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0) rotate(0); opacity: 0; }
+    15% { opacity: 0.9; }
+    to { transform: translateY(-110vh) rotate(40deg); opacity: 0; }
+}
+
+#confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 520px) {
+    .card { padding: 30px 17px; }
+    .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .photo-card:nth-child(3) {
+        grid-column: 1 / -1;
+        width: 65%;
+        justify-self: center;
+    }
+    .letter { padding: 25px 18px; }
+    .letter p { font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<button class="music" id="musicBtn">♫ Music: OFF</button>
+
+<div id="hearts"></div>
+<canvas id="confetti"></canvas>
+
+<!-- SCREEN 1: WELCOME -->
+
+<section id="welcome" class="screen active">
+    <div class="card">
+        <div class="moon">🌙</div>
+
+        <p class="eyebrow">A LITTLE SURPRISE FOR SOMEONE SPECIAL</p>
+
+        <h1>Hey, <span class="gradient">Macha!</span></h1>
+
+        <p class="subtitle">
+            I've been keeping something special for you...
+        </p>
+
+        <div class="divider">♡ ✦ ♡</div>
+
+        <p class="subtitle">
+            11 years of friendship.<br>
+            Countless memories.<br>
+            One bond I never want to lose.
+        </p>
+
+        <p class="small">Made with love by your bab 💌</p>
+
+        <button class="btn" id="startBtn">
+            Open Your Surprise ✨
+        </button>
+
+        <p class="small">Psst... this is just for you.</p>
+    </div>
+</section>
+
+
+<!-- SCREEN 2: GIFT -->
+
+<section id="giftScreen" class="screen">
+    <div class="card">
+        <p class="eyebrow">YOUR LITTLE PRESENT 🎀</p>
+
+        <h2>Something from<br>
+            <span class="gradient">my heart to yours.</span>
+        </h2>
+
+        <p class="subtitle">Ready, birthday girl?</p>
+
+        <button class="gift" id="giftBtn" aria-label="Open gift">
+            🎁
+        </button>
+
+        <p class="subtitle">Tap the gift to open it!</p>
+    </div>
+</section>
+
+
+<!-- SCREEN 3: PHOTO MEMORIES -->
+
+<section id="memoryScreen" class="screen">
+    <div class="card">
+        <p class="eyebrow">OUR LITTLE WORLD 📸</p>
+
+        <h2>11 years of <span class="gradient">us.</span></h2>
+
+        <p class="subtitle">
+            From school days to college days,
+            and all the memories in between.
+        </p>
+
+        <div class="photo-grid">
+
+            <button class="photo-card"
+                    data-message="From school days to today, I'm so glad our story started. 💗">
+
+                <div class="photo-area">
+                    <img src="memory1.jpg" alt="Our school memory">
+                    <span>📸<br>School photo goes here</span>
+                </div>
+
+                <p class="photo-caption">Our school days 🌷</p>
+            </button>
+
+            <button class="photo-card"
+                    data-message="College gave us new memories, but having you beside me made them even better. 🫶">
+
+                <div class="photo-area">
+                    <img src="memory2.jpg" alt="Our college memory">
+                    <span>📸<br>College photo goes here</span>
+                </div>
+
+                <p class="photo-caption">College memories 🎀</p>
+            </button>
+
+            <button class="photo-card"
+                    data-message="Different days, different chapters, but you're still my favourite person to make memories with. 💕">
+
+                <div class="photo-area">
+                    <img src="memory3.jpg" alt="Our recent photo">
+                    <span>📸<br>Our recent photo goes here</span>
+                </div>
+
+                <p class="photo-caption">Still besties 💗</p>
+            </button>
+
+        </div>
+
+        <p id="memory-message">
+            Tap a photo to unlock a little memory. ♡
+        </p>
+
+        <button class="btn" id="letterBtn">
+            There's a Letter for You 💌
+        </button>
+    </div>
+</section>
+
+
+<!-- SCREEN 4: LETTER -->
+
+<section id="letterScreen" class="screen">
+    <div class="card">
+        <p class="eyebrow">A LETTER FROM YOUR BAB 💌</p>
+
+        <h2>To my <span class="gradient">Aarthi...</span></h2>
+
+        <p class="subtitle">
+            Some feelings deserve more than a simple message.
+        </p>
+
+        <button class="gift" id="envelopeBtn" aria-label="Open letter">
+            💌
+        </button>
+
+        <p class="subtitle" id="envelopeHint">
+            Tap the envelope to read my letter.
+        </p>
+
+        <article class="letter" id="letter">
+
+            <div style="text-align:center; margin-bottom:25px;">
+                ♡ &nbsp; ♡ &nbsp; ♡
+            </div>
+
+            <h3>To my Aarthi, my forever bestie,</h3>
+
+            <p>Happy Birthday, macha! 🎂💗</p>
+
+            <p>
+                Do you realise that we've been friends for
+                11 years? ELEVEN YEARS! Sometimes I really
+                can't believe how much time has passed.
+                From our school days to our college days,
+                and now to the people we're becoming,
+                you've been such a special part of my life.
+            </p>
+
+            <p>
+                We've shared so many memories, laughed at
+                silly things, had our little fights, and
+                made moments that I will always carry in
+                my heart. Even the smallest memories with
+                you mean more to me than you probably know.
+            </p>
+
+            <p>
+                Life won't always be the same. We'll grow,
+                change, get busy, and have our own dreams
+                to chase. But one thing I truly hope for
+                is that we never become strangers to each
+                other.
+            </p>
+
+            <p>
+                I hope that years from now, we'll sit
+                together, look at these old photos, laugh
+                at how we looked, remember our silly
+                stories, and say, "Look at us! We really
+                made it through all these years together!"
+            </p>
+
+            <p>
+                I may not always express my feelings
+                perfectly, but please know this:
+                <strong>
+                    your friendship is one of the most
+                    precious things in my life.
+                </strong>
+            </p>
+
+            <p>
+                On your birthday, I wish you happiness
+                that never runs out, dreams that come true,
+                people who love you genuinely, and a life
+                filled with beautiful moments.
+            </p>
+
+            <p>
+                And whenever life gets difficult, I hope
+                you remember that somewhere in this world,
+                there's a person who has shared 11 years
+                of memories with you and is always
+                cheering for your happiness. 🫂
+            </p>
+
+            <p>
+                Thank you for being part of my story,
+                macha. Here's to more years of laughter,
+                more photos, more memories, and a friendship
+                that keeps finding its way back to us.
+            </p>
+
+            <p style="color:#a34b83; font-weight:bold;">
+                Happy Birthday, my favourite Gurl! 🎂
+            </p>
+
+            <p class="signature">
+                Forever your bestie,<br>
+                Abirami ♡
+            </p>
+
+            <div style="text-align:center; margin-top:25px;">
+                Made with love, always ♡
+            </div>
+        </article>
+
+        <button class="btn hidden" id="finalBtn">
+            One Last Surprise... 🥹
+        </button>
+    </div>
+</section>
+
+
+<!-- SCREEN 5: FINAL SURPRISE -->
+
+<section id="finalScreen" class="screen">
+    <div class="card">
+        <div class="final-cake">🎂</div>
+
+        <p class="eyebrow">AND BEFORE YOU GO...</p>
+
+        <h1>Happy Birthday,<br>
+            <span class="gradient">My Aarthi! 💗</span>
+        </h1>
+
+        <p class="final-message">
+            11 years down.<br>
+            So many memories made.<br>
+            And hopefully, a lifetime of friendship ahead.
+        </p>
+
+        <div style="font-size:65px; margin:20px;">💗</div>
+
+        <p class="subtitle">
+            No matter how much life changes,<br>
+            you'll always have a special place in my heart.
+        </p>
+
+        <p class="signature">
+            Lots of love,<br>
+            Your bab, Abirami 🫶
+        </p>
+
+        <button class="btn" id="replayBtn">
+            Relive Our Surprise ↻
+        </button>
+    </div>
+</section>
+
+
+<script>
+// ========================================
+// SCREEN NAVIGATION
+// ========================================
+
+const screenIds = [
+    "welcome",
+    "giftScreen",
+    "memoryScreen",
+    "letterScreen",
+    "finalScreen"
+];
+
+function showScreen(id) {
+    screenIds.forEach(function(screenId) {
+        document.getElementById(screenId)
+            .classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+
+// ========================================
+// WELCOME AND GIFT
+// ========================================
+
+document.getElementById("startBtn")
+    .addEventListener("click", function() {
+        showScreen("giftScreen");
+        confettiBurst();
+    });
+
+document.getElementById("giftBtn")
+    .addEventListener("click", function() {
+        confettiBurst();
+        heartBurst();
+
+        const gift = document.getElementById("giftBtn");
+        gift.disabled = true;
+        gift.style.opacity = "0";
+
+        setTimeout(function() {
+            showScreen("memoryScreen");
+            gift.style.opacity = "1";
+            gift.disabled = false;
+        }, 600);
+    });
+
+
+// ========================================
+// PHOTO MEMORY POPUPS
+// ========================================
+
+document.querySelectorAll(".photo-card")
+    .forEach(function(card) {
+
+        card.addEventListener("click", function() {
+            document.getElementById("memory-message")
+                .textContent = card.dataset.message;
+
+            heartBurst();
+        });
+
+    });
+
+
+// ========================================
+// PHOTO PLACEHOLDER HANDLING
+// ========================================
+
+document.querySelectorAll(".photo-area").forEach(function(area) {
+    const img = area.querySelector("img");
+    const placeholder = area.querySelector("span");
+
+    function showPhoto() {
+        img.style.display = "block";
+        placeholder.style.display = "none";
+    }
+
+    function showPlaceholder() {
+        img.style.display = "none";
+        placeholder.style.display = "flex";
+    }
+
+    img.addEventListener("load", showPhoto);
+    img.addEventListener("error", showPlaceholder);
+
+    if (img.complete && img.naturalWidth > 0) {
+        showPhoto();
+    } else {
+        showPlaceholder();
+    }
+});
+
+
+// ========================================
+// LETTER
+// ========================================
+
+document.getElementById("letterBtn")
+    .addEventListener("click", function() {
+
+        showScreen("letterScreen");
+
+        document.getElementById("letter")
+            .classList.remove("open");
+
+        document.getElementById("finalBtn")
+            .classList.add("hidden");
+
+        document.getElementById("envelopeBtn")
+            .classList.remove("hidden");
+
+        document.getElementById("envelopeHint")
+            .classList.remove("hidden");
+    });
+
+document.getElementById("envelopeBtn")
+    .addEventListener("click", function() {
+
+        document.getElementById("letter")
+            .classList.add("open");
+
+        document.getElementById("envelopeBtn")
+            .classList.add("hidden");
+
+        document.getElementById("envelopeHint")
+            .classList.add("hidden");
+
+        document.getElementById("finalBtn")
+            .classList.remove("hidden");
+
+        heartBurst();
+
+        setTimeout(function() {
+            document.getElementById("letter")
+                .scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+        }, 250);
+    });
+
+
+// ========================================
+// FINAL SCREEN AND REPLAY
+// ========================================
+
+document.getElementById("finalBtn")
+    .addEventListener("click", function() {
+        showScreen("finalScreen");
+        confettiBurst();
+        heartBurst();
+    });
+
+document.getElementById("replayBtn")
+    .addEventListener("click", function() {
+        showScreen("welcome");
+
+        document.getElementById("letter")
+            .classList.remove("open");
+
+        document.getElementById("envelopeBtn")
+            .classList.remove("hidden");
+
+        document.getElementById("envelopeHint")
+            .classList.remove("hidden");
+
+        document.getElementById("finalBtn")
+            .classList.add("hidden");
+
+        document.getElementById("memory-message")
+            .textContent = "Tap a photo to unlock a little memory. ♡";
+    });
+
+
+// ========================================
+// FLOATING HEARTS
+// ========================================
+
+const heartSymbols = ["💗", "💕", "♡", "💖", "💜", "✨"];
+
+function createHeart() {
+    const heart = document.createElement("span");
+
+    heart.className = "heart";
+
+    heart.textContent =
+        heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.fontSize = (14 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 4) + "s";
+
+    document.getElementById("hearts").appendChild(heart);
+
+    setTimeout(function() {
+        heart.remove();
+    }, 9500);
+}
+
+setInterval(createHeart, 650);
+
+function heartBurst() {
+    for (let i = 0; i < 15; i++) {
+        setTimeout(createHeart, i * 80);
+    }
+}
+
+
+// ========================================
+// CONFETTI
+// ========================================
+
+function confettiBurst() {
+    const canvas = document.getElementById("confetti");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const pieces = [];
+    const colors = [
+        "#ff9ec5",
+        "#c8a9ff",
+        "#fff0a8",
+        "#ffffff",
+        "#ffb3dc"
+    ];
+
+    for (let i = 0; i < 100; i++) {
+        pieces.push({
+            x: Math.random() * canvas.width,
+            y: -Math.random() * canvas.height,
+            size: 3 + Math.random() * 5,
+            speed: 2 + Math.random() * 4,
+            drift: (Math.random() - 0.5) * 2,
+            color: colors[Math.floor(Math.random() * colors.length)]
+        });
+    }
+
+    let frame = 0;
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        pieces.forEach(function(piece) {
+            piece.x += piece.drift;
+            piece.y += piece.speed;
+
+            ctx.fillStyle = piece.color;
+            ctx.fillRect(piece.x, piece.y, piece.size, piece.size);
+        });
+
+        frame++;
+
+        if (frame < 130) {
+            requestAnimationFrame(draw);
+        } else {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    }
+
+    draw();
+}
+
+window.addEventListener("resize", function() {
+    const canvas = document.getElementById("confetti");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+
+
+// ========================================
+// ORIGINAL LITTLE MELODY 🎶
+// Music starts only when the button is tapped.
+// ========================================
+
+let audioContext = null;
+let musicTimer = null;
+let musicPlaying = false;
+let noteIndex = 0;
+
+const notes = [
+    [523.25, 0.28],
+    [659.25, 0.28],
+    [783.99, 0.40],
+    [659.25, 0.28],
+    [587.33, 0.28],
+    [698.46, 0.28],
+    [880.00, 0.40],
+    [698.46, 0.28],
+    [523.25, 0.28],
+    [659.25, 0.28],
+    [783.99, 0.28],
+    [1046.50, 0.55],
+    [783.99, 0.28],
+    [659.25, 0.28],
+    [587.33, 0.40],
+    [523.25, 0.55]
+];
+
+function playNote(frequency, duration, startTime) {
+    if (!audioContext) return;
+
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+
+    oscillator.type = "sine";
+    oscillator.frequency.value = frequency;
+
+    gain.gain.setValueAtTime(0.0001, startTime);
+    gain.gain.exponentialRampToValueAtTime(0.07, startTime + 0.03);
+    gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+
+    oscillator.start(startTime);
+    oscillator.stop(startTime + duration + 0.02);
+}
+
+function scheduleNotes() {
+    if (!audioContext || !musicPlaying) return;
+
+    while (window.nextNoteTime < audioContext.currentTime + 0.5) {
+        const note = notes[noteIndex];
+
+        playNote(note[0], note[1], window.nextNoteTime);
+
+        window.nextNoteTime += note[1] + 0.08;
+
+        noteIndex = (noteIndex + 1) % notes.length;
+    }
+}
+
+async function startMusic() {
+    try {
+        const AudioContextClass =
+            window.AudioContext || window.webkitAudioContext;
+
+        if (!AudioContextClass) {
+            alert("Sorry, your browser does not support this music feature.");
+            return;
+        }
+
+        if (!audioContext) {
+            audioContext = new AudioContextClass();
+        }
+
+        await audioContext.resume();
+
+        musicPlaying = true;
+        noteIndex = 0;
+
+        window.nextNoteTime = audioContext.currentTime + 0.1;
+
+        musicTimer = setInterval(scheduleNotes, 100);
+
+        scheduleNotes();
+
+        document.getElementById("musicBtn").textContent = "♫ Music: ON";
+    } catch (error) {
+        console.error(error);
+        document.getElementById("musicBtn").textContent = "♫ Music: OFF";
+    }
+}
+
+async function stopMusic() {
+    musicPlaying = false;
+
+    clearInterval(musicTimer);
+    musicTimer = null;
+
+    if (audioContext) {
+        await audioContext.suspend();
+    }
+
+    document.getElementById("musicBtn").textContent = "♫ Music: OFF";
+}
+
+document.getElementById("musicBtn").addEventListener("click", function() {
+    if (musicPlaying) {
+        stopMusic();
+    } else {
+        startMusic();
+    }
+});
+
+console.log("A birthday surprise made with love 💗");
+</script>
+
+</body>
+</html>
